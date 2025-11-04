@@ -15,10 +15,8 @@ html, body {
 
 body {
     grid-template-rows: 
+     background-color #472418;
 }
 
-site-header. {
-    background-color: #472418;
-    
-}
+
 
