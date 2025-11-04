@@ -1,0 +1,24 @@
+/* Custom Font - Clash Grotesk Variable */
+@font-face {
+font-family: 'Clash Grotesk'; src: url('Font/ClashGrotesk_Complete/Fonts/WEB/fonts/ClashGrotesk-Variable.woff2') format('woff2'),
+
+}
+
+* {
+    box-sizing: border-box;
+    font-family: 'Clash Grotesk';
+}
+
+html, body {
+
+}
+
+body {
+    grid-template-rows: 
+}
+
+site-header. {
+    background-color: #472418;
+    
+}
+
