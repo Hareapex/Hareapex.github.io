@@ -1,0 +1,30 @@
+
+=====================
+Notes for the website
+=====================
+
+
+
+
+
+2025-11-04
+
+fixed some errors in the html and css
+
+
+=============
+Color pallate
+=============
+sorted by brightness:
+#0f0b0d black
+#2d221e grayish brown
+#3c3131 dark clay
+#472418 dark Brown
+#574034 dark grayish brown
+#785d4c light grayish brown
+#a37850 orange ish brown
+#ffffff White
+
+
+background: #2d221e/#2d221e
+text:#ffffff/#a37850
