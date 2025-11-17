@@ -1,22 +1,68 @@
-/* Custom Font - Clash Grotesk Variable */
+/* Custom Font */
 @font-face {
 font-family: 'Clash Grotesk'; src: url('Font/ClashGrotesk_Complete/Fonts/WEB/fonts/ClashGrotesk-Variable.woff2') format('woff2'),
 
 }
 
+
+/* Reset and Base Styles */
 * {
     box-sizing: border-box;
-    font-family: 'Clash Grotesk';
+    margin: 0;
+    padding: 0;
 }
 
 html, body {
+font-family: 'Clash Grotesk', sans-serif;
+background-color: #2d221e;
+color: #ffffff;
+line-height: 1.6;  
 
 }
 
-body {
-     
-    
+/* ========== HEADER SECTION ========== */
+.site-header {
+background-color: #2d221e; 
+padding: 20px 40px;
 }
 
 
+/* ========== MAIN NAVIGATION ========== */
+.main-nav {
+    display: grid;
+    grid-template-columns: auto 1fr;
+    alihn-items: center;
+    gap: 40px;
+}
 
+
+.main-nav h1 {
+    font-family: 'Clash Grotesk', sans-serif;
+    font-size: 24px;
+    color: #ffffff;
+    font-weight: 700;
+    margin: 0;
+}
+
+
+.main-nav ul {
+    display : flex;
+    list-style: none;
+    gap: 10px;
+    justify-content: flex-end;
+}
+
+.main-nav ul li a {
+    color: #a37850;
+    font-size: 18px;
+    text-decoration: none;
+    padding: 8px 16px;
+    transition: all 0.3s ease;
+    border-radius: 4px;
+}
+
+.main-nav ul li a:hover {
+    color: #ffffff;
+    background-color: rgba(163, 120, 80, 0.2);
+    transform: translateY(-2px)
+}
