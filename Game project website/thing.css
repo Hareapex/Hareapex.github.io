@@ -147,12 +147,13 @@ overflow: hidden;
     font-size: 16px;
     color: #a37850;
     margin-bottom: 12px;
+    line-height: 1.5;
 }
 
 /* ========== INFO IMAGE ========== */
 .info-image {
     height: 250px;
-    border-radius: 8px;
+    border-radius: 14px;
     overflow: hidden;
     background-color: #472418;
     box-shadow: 0 2px 6px rgba(0, 0, 0, 0.3);
