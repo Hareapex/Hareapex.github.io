@@ -31,7 +31,7 @@ padding: 20px 40px;
 .main-nav {
     display: grid;
     grid-template-columns: auto 1fr;
-    alihn-items: center;
+    align-items: center;
     gap: 40px;
 }
 
