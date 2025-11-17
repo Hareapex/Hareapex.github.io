@@ -96,6 +96,7 @@ overflow: hidden;
     width: 100%;
     height: 100%;
     object-fit: cover;
+
 }
 
 /* ========== Hero Title ========== */
@@ -126,8 +127,9 @@ overflow: hidden;
     background-color: #2d221e;
     padding: 40px;
     border-radius: 10px;
-    margin-bottom: 60px;
+    margin: 60px 40px;
     align-items: center;
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.2);
 }
 
 
@@ -142,7 +144,6 @@ overflow: hidden;
 .info-text p {
     font-size: 16px;
     color: #a37850;
-    line-height: 1.5;
     margin-bottom: 12px;
 }
 
@@ -152,6 +153,7 @@ overflow: hidden;
     border-radius: 8px;
     overflow: hidden;
     background-color: #472418;
+    box-shadow: 0 2px 6px rgba(0, 0, 0, 0.3);
 }
 
 .info-image img {
@@ -195,7 +197,7 @@ overflow: hidden;
 
 .gallery-item:hover {
     transform: translateY(-5px);
-    box-shadow: 0 8px 16px rgba(0, 0, 0, 0.3);
+    box-shadow: 0 8px 16px rgba(0, 0, 0, 0.4);
     border-color: #a37850;
 }
 
@@ -214,7 +216,7 @@ overflow: hidden;
 
 .gallery-text h3 {
     font-size: 20px;
-    color: #ffffff;
+    color: #2d221e;
     margin-bottom: 8px;
     font-weight: 700;
 }
@@ -236,85 +238,130 @@ overflow: hidden;
     border-top: 1px solid #574034;
 }
 
+.site-footer p {
+    margin: 0;
+}
 
- /* ACCESSIBILITY FEATURES */
-        a:focus,
-        button:focus {
-            outline: 2px solid #a37850;
-            outline-offset: 2px;
-        }
 
-        :focus-visible {
-            outline: 2px solid #a37850;
-            outline-offset: 2px;
-        }
+ a:focus,
+button:focus {
+    outline: 2px solid #a37850;
+    outline-offset: 2px;
+}
 
-        /* RESPONSIVE DESIGN */
-        @media screen and (max-width: 768px) {
-            .main-nav {
-                grid-template-columns: 1fr;
-                text-align: center;
-                gap: 20px;
-            }
-            
-            .main-nav ul {
-                justify-content: center;
-                flex-wrap: wrap;
-            }
-            
-            .info-section {
-                grid-template-columns: 1fr;
-                margin: 40px 20px;
-                padding: 30px 20px;
-            }
-            
-            .gallery-grid {
-                grid-template-columns: 1fr;
-            }
-            
-            .hero-section {
-                padding: 40px 20px;
-            }
-            
-            .gallery-section {
-                margin: 0 20px 40px;
-                padding: 40px 20px;
-            }
-        }
+:focus-visible {
+    outline: 2px solid #a37850;
+    outline-offset: 2px;
+}
 
-        @media screen and (max-width: 480px) {
-            .site-header {
-                padding: 15px 20px;
-            }
-            
-            .main-nav h1 {
-                font-size: 20px;
-            }
-            
-            .main-nav ul li a {
-                font-size: 16px;
-                padding: 6px 12px;
-            }
-            
-            .hero-image {
-                width: 250px;
-                height: 250px;
-                margin: 15px auto;
-            }
-            
-            .hero-title {
-                font-size: 28px;
-            }
-            
-            .hero-description {
-                font-size: 16px;
-            }
-            
-            .info-text h2 {
-                font-size: 20px;
-            }
-            
-            .gallery-section h2 {
-                font-size: 24px;
-            }
-        }
+/* Screen reader only content */
+.sr-only {
+    position: absolute;
+    width: 1px;
+    height: 1px;
+    padding: 0;
+    margin: -1px;
+    overflow: hidden;
+    clip: rect(0, 0, 0, 0);
+    white-space: nowrap;
+    border-width: 0;
+}
+
+/* ========================================
+   RESPONSIVE DESIGN
+   ======================================== */
+@media screen and (max-width: 768px) {
+    .main-nav {
+        grid-template-columns: 1fr;
+        text-align: center;
+        gap: 20px;
+    }
+    
+    .main-nav ul {
+        justify-content: center;
+        flex-wrap: wrap;
+    }
+    
+    .info-section {
+        grid-template-columns: 1fr;
+        margin: 40px 20px;
+        padding: 30px 20px;
+    }
+    
+    .gallery-grid {
+        grid-template-columns: 1fr;
+    }
+    
+    .hero-section {
+        padding: 40px 20px;
+    }
+    
+    .gallery-section {
+        margin: 0 20px 40px;
+        padding: 40px 20px;
+    }
+}
+
+@media screen and (max-width: 480px) {
+    .site-header {
+        padding: 15px 20px;
+    }
+    
+    .main-nav h1 {
+        font-size: 20px;
+    }
+    
+    .main-nav ul li a {
+        font-size: 16px;
+        padding: 6px 12px;
+    }
+    
+    .hero-image {
+        width: 250px;
+        height: 250px;
+        margin: 15px auto;
+    }
+    
+    .hero-title {
+        font-size: 28px;
+    }
+    
+    .hero-description {
+        font-size: 16px;
+    }
+    
+    .info-text h2 {
+        font-size: 20px;
+    }
+    
+    .gallery-section h2 {
+        font-size: 24px;
+    }
+}
+
+/* ========================================
+   PRINT STYLES
+   ======================================== */
+@media print {
+    .main-nav ul {
+        display: none;
+    }
+    
+    body {
+        background-color: white;
+        color: black;
+    }
+    
+    .site-header,
+    .hero-section,
+    .info-section,
+    .gallery-section,
+    .site-footer {
+        background-color: white;
+        box-shadow: none;
+    }
+    
+    .gallery-item {
+        page-break-inside: avoid;
+    }
+}
