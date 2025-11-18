@@ -13,6 +13,7 @@ font-family: 'Clash Grotesk'; src: url('Font/ClashGrotesk_Complete/Fonts/WEB/fon
 }
 
 html, body {
+/* sets the base for all the text and colors */
 font-family: 'Clash Grotesk', sans-serif;
 background-color: #2d221e;
 color: #ffffff;
@@ -29,6 +30,8 @@ html {
 
 /* ========== HEADER SECTION ========== */
 .site-header {
+
+/* sets the background color and padding for the header */
 background-color: #2d221e; 
 padding: 20px 40px;
 }
@@ -50,7 +53,10 @@ padding: 20px 40px;
     font-weight: 600;
     margin: 0;
 
+    /* creates a little under line for the header in the NAV */
     border-bottom: 2px solid #574034;
+
+    /* makes it so the line is only as wide as the text */
     display: inline-block;
     
 }
@@ -58,12 +64,18 @@ padding: 20px 40px;
 
 .main-nav ul {
     display : flex;
+
+    /* removes the default list styling */
     list-style: none;
+    /* creates some room between the buttons */
     gap: 10px;
+    /* aligns the navigation to the right side i think*/
     justify-content: flex-end;
 }
 
 .main-nav ul li a {
+
+    /* styles for the navigation links */
     color: #a37850;
     font-size: 18px;
     text-decoration: none;
@@ -73,11 +85,17 @@ padding: 20px 40px;
 }
 
 .main-nav ul li a:hover {
+
+    /* interact styles for the nav  links on hover */
+
+    /* changes text color and background on hover */
     color: #ffffff;
     background-color: rgba(163, 120, 80, 0.2);
+
+    /* slight lift effect on hover */
     transform: translateY(-2px);
 
-    
+    /* adds a bottom border which creates a 3d effect and shadown on hover */
     border-bottom: 4px solid #574034;
     display: inline-block;
     box-shadow: 0 8px 16px rgba(0, 0, 0, 0.4);
@@ -85,30 +103,50 @@ padding: 20px 40px;
 
 
 .main-nav ul li a:focus {
+
+    /* focus styles for accessibility */
     outline: 2px solid #a37850;
     outline-offset: 2px;
 }
 
 /* ========== HERO SECTION ========== */
 
+/* styles for the hero section */
 .hero-section {
     background-color: #3c3131;
+
+    /* padding around the hero content */
     padding: 60px 40px;
+
+    /* centers the text in the hero section */
     text-align: center;
 }
 
 /* ========== HERO IMAGE ========== */
+
+
 .hero-image {
+
+
 display: inline-block;
+
+/* size of the hero image */
 width : 300px;
 height : 300px;
+
+/* background color when img is not loaded */
 background-color: #472418;
+
+/* styles */
 border-radius: 10px;
+outline: 2px solid #a37850;
 margin: 20px;
 overflow: hidden;
 }
 
 .hero-image img {
+
+    /* makes the image fill the container */
     width: 100%;
     height: 100%;
     object-fit: cover;
@@ -118,6 +156,8 @@ overflow: hidden;
 
 /* ========== Hero Title ========== */
 .hero-title {
+
+    /* styles for the hero title */
     font-size: 36px;
     color: #ffffff;
     font-weight: 600;
@@ -128,7 +168,10 @@ overflow: hidden;
 
 /* ========== HERO DESCRIPTION ========== */
 
+
 .hero-description {
+
+    /* sets the font, color, and margins for the hero description */
     font-size: 18px;
     color: #a37850;
     margin-top: 15px;
@@ -139,6 +182,8 @@ overflow: hidden;
 }
 
 /* ========== INFO SECTION ========== */
+
+/* styles for the info section */
 .info-section {
     display: grid;
     grid-template-columns: 1fr 1fr;
@@ -154,17 +199,24 @@ overflow: hidden;
 
 
 /* ========== INFO TEXT ========== */
+
+
+/* styles for the info text */
 .info-text h2 {
     font-size: 24px;
     color: #ffffff;
     margin-bottom: 16px;
     font-weight: 600;
 
+    /* creates a little under line for the header in the INFO TEXT */
     border-bottom: 2px solid #574034;
     display: inline-block;
 }
 
+
+/* styles for the paragraphs in the info text */
 .info-text p {
+    /* sets font size, color, margin, and line height for better readability */
     font-size: 16px;
     color: #a37850;
     margin-bottom: 12px;
@@ -172,66 +224,131 @@ overflow: hidden;
 }
 
 /* ========== INFO IMAGE ========== */
+
 .info-image {
+
+    /* styles for the info image container */
     height: 250px;
+
+    /* makes the image container corners rounded */
     border-radius: 14px;
+
+    /* ensures the image fits within the rounded corners */
     overflow: hidden;
+
+    /* background color when img is not loaded */
     background-color: #472418;
+
+    /* adds a subtle shadow to the image container */
     box-shadow: 0 2px 6px rgba(0, 0, 0, 0.3);
 }
 
 
 .info-image img {
+
+    /* makes the image fill the container */
     width: 100%;
     height: 100%;
     object-fit: cover;
 }
 
 /* ========== GALLERY SECTION ========== */
+
+/* styles for the gallery section */
 .gallery-section {
+
     background-color: #3c3131;
+
+    /* padding around the gallery content */
     padding: 60px 40px;
+
+    /* margin around the gallery section */
     margin: 0 40px 40px;
+
+    /* makes the corners rounded */
     border-radius: 10px;
 }
 
+/* ========== GALLERY TITLE ========== */
 .gallery-section h2 {
+
+    /* styles for the gallery title */
+
+    /* sets the font size*/
     font-size: 28px;
+
+    /* sets the text color */
     color: #ffffff;
+
+    /* centers the text */
     text-align: center;
+
+    /* margin around the bottom of title */
     margin-bottom: 40px;
+
+    /* makes the font bolder */
     font-weight: 600;
 
+    /* creates a little under line for the header in the GALLERY SECTION */
     border-bottom: 2px solid #574034;
+
+    /* makes it so the line is only as wide as the text */
     display: inline-block;
     
 }
 
 /* ========== GALLERY GRID ========== */
+
+/* styles for the gallery grid layout */
 .gallery-grid {
+
+    /* creates a grid layout with 3 columns */
     display: grid;
     grid-template-columns: repeat(3, 1fr);
+
+    /* gap between the grid items */
     gap: 20px;
 }
 
 
 /* ========== GALLERY CARDS ========== */
 .gallery-item {
+
+    /* styles for individual gallery items */
+
     background-color: #2d221e;
+
+    /* adds a border and rounded corners */
     border: 1px solid #785d4c;
     border-radius: 8px;
+
+    /* fills the img container */
     overflow: hidden;
+
+    /* adds a subtle shadow to the gallery items */
     transition: transform 0.3s ease, box-shadow 0.3s ease;
 }
 
 .gallery-item:hover {
+
+    /* hover effect for gallery items */
+
+    /* slight lift effect on hover */
     transform: translateY(-5px);
+
+    /* adds a more pronounced shadow on hover */
     box-shadow: 0 8px 16px rgba(0, 0, 0, 0.4);
+
+    /* changes border color on hover */
     border-color: #a37850;
 }
 
 /* ========== GALLERY IMAGES ========== */
+
+/* styles for the gallery images */
 .gallery-image {
+
+    /* makes the image container fill the gallery item */
     height: 200px;
     background-color: #472418;
     background-size: cover;
@@ -240,6 +357,8 @@ overflow: hidden;
 
 /* ========== GALLERY TEXT ========== */
 .gallery-text {
+
+    /* adds room around the gallery text */
     padding: 16px;
 }
 
@@ -261,12 +380,25 @@ overflow: hidden;
 /* ========== FOOTER ========== */
 .site-footer {
 
+    /* styles for the footer section */
     background-color: #3c3131;
+
+    /* sets the text color for the footer */
     color: #a37850;
+
+    /* sets the font size for the footer text */
     font-size: 16px;
+
+    /* padding around the footer content */
     padding: 30px;
+
+    /* centers the footer text */
     text-align: center;
+
+    /* margin above the footer */
     margin-top: 40px;
+
+    /* creates a little over line for the footer */
     border-top: 1px solid #574034;
 }
 
