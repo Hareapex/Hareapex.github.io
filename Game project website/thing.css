@@ -275,6 +275,19 @@ overflow: hidden;
 }
 
 
+
+
+
+
+
+
+
+/* ========================================
+   anything past this point is basically just ai made, since i didnt know how to do it myself, feel free to ignore
+    ACCESSIBILITY STYLE stuff
+   ======================================== */
+
+
  a:focus,
 button:focus {
     outline: 2px solid #a37850;
