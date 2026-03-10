@@ -1,0 +1,753 @@
+/*
+   LOST SIGNAL - CSS STYLESHEET
+   Horror Sci-Fi Terminal Aesthetic
+   Ship: Meili MKII
+*/
+
+/*
+   COLOR PALETTE - Design System
+*/
+:root {
+    /* Main Colors */
+    --void-black: #0A0A0A;           /* Background - outer space */
+    --deep-space: #1A1A1A;           /* Secondary background */
+    --hull-gray: #2A2A2A;            /* Element backgrounds */
+    
+    /* Neon Accents */
+    --terminal-green: #00FF41;       /* Primary accent - terminals, OK status */
+    --danger-red: #FF0040;           /* Warnings, errors, threats */
+    --alert-orange: #FF6B00;         /* Alerts, important messages */
+    --signal-blue: #00D9FF;          /* Radio signals, communication */
+    
+    /* Text */
+    --text-primary: #E0E0E0;         /* Main text */
+    --text-dim: #808080;             /* Secondary text */
+    --text-glitch: #FF00FF;          /* Glitch effects */
+}
+
+/*BASE STYLES - Reset & Typography
+==================================*/
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    background: var(--void-black);
+    color: var(--text-primary);
+    font-family: 'Share Tech Mono', monospace;
+    font-size: 16px;
+    line-height: 1.6;
+}
+
+/*TERMINAL NAVIGATION*/
+
+.terminal-nav {
+    background: var(--deep-space);
+    border-top: 3px solid var(--terminal-green);
+    border-bottom: 3px solid var(--terminal-green);
+    border-left: 8px solid var(--terminal-green);
+    padding: 20px;
+    position: sticky;
+    top: 0;
+    z-index: 1000;
+    box-shadow: 0 0 20px rgba(0, 255, 65, 0.3);
+}
+
+.nav-container {
+    max-width: 1200px;
+    margin: 0 auto;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    flex-wrap: wrap;
+    gap: 20px;
+}
+
+/* Nav Header - Ship Name & Status */
+.nav-header {
+    display: flex;
+    gap: 30px;
+    align-items: center;
+}
+
+.ship-name {
+    color: var(--terminal-green);
+    font-weight: bold;
+    letter-spacing: 3px;
+    font-size: 18px;
+    text-shadow: 0 0 10px var(--terminal-green);
+}
+
+.status-indicator {
+    color: var(--danger-red);
+    font-size: 12px;
+    text-transform: uppercase;
+    animation: blink 1.5s infinite;
+}
+
+@keyframes blink {
+    0%, 50%, 100% { opacity: 1; }
+    25%, 75% { opacity: 0.3; }
+}
+
+/* Nav Menu */
+.nav-menu {
+    display: flex;
+    list-style: none;
+    gap: 30px;
+}
+
+.nav-menu a {
+    color: var(--text-primary);
+    text-decoration: none;
+    font-size: 14px;
+    padding: 8px 0;
+    transition: all 0.3s ease;
+    display: block;
+}
+
+.nav-menu a:hover {
+    color: var(--terminal-green);
+    text-shadow: 0 0 10px var(--terminal-green);
+    padding-left: 10px;
+}
+
+/* EMERGENCY HERO*/
+
+.hero {
+    min-height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 40px 20px;
+    position: relative;
+    background: radial-gradient(ellipse at center, 
+        transparent 0%, 
+        rgba(10, 10, 10, 0.8) 70%, 
+        var(--void-black) 100%);
+}
+
+/* Scanlines Overlay */
+.hero::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: repeating-linear-gradient(
+        0deg,
+        rgba(0, 0, 0, 0.15),
+        rgba(0, 0, 0, 0.15) 1px,
+        transparent 1px,
+        transparent 2px
+    );
+    pointer-events: none;
+    opacity: 0.5;
+}
+
+.hero-content {
+    max-width: 900px;
+    text-align: center;
+    position: relative;
+    z-index: 1;
+}
+
+.hero-title {
+    font-family: 'Orbitron', sans-serif;
+    font-size: 56px;
+    color: var(--terminal-green);
+    text-shadow: 
+        0 0 10px var(--terminal-green),
+        0 0 20px var(--terminal-green),
+        0 0 40px var(--terminal-green);
+    letter-spacing: 8px;
+    margin-bottom: 40px;
+    animation: flicker 3s infinite;
+}
+
+@keyframes flicker {
+    0%, 19%, 21%, 23%, 25%, 54%, 56%, 100% {
+        opacity: 1;
+    }
+    20%, 24%, 55% {
+        opacity: 0.7;
+    }
+}
+
+/* Emergency Alert Box */
+.emergency-alert {
+    background: rgba(26, 26, 26, 0.9);
+    border: 2px solid var(--danger-red);
+    border-left: 8px solid var(--danger-red);
+    padding: 25px 40px;
+    margin: 0 auto 40px;
+    max-width: 700px;
+    box-shadow: 0 0 30px rgba(255, 0, 64, 0.3);
+}
+
+.alert-header {
+    color: var(--danger-red);
+    font-weight: bold;
+    font-size: 14px;
+    margin-bottom: 20px;
+    animation: blink 1.5s infinite;
+}
+
+.alert-status {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 15px;
+    font-size: 13px;
+    color: var(--text-dim);
+}
+
+.alert-status .critical {
+    color: var(--danger-red);
+    font-weight: bold;
+}
+
+.alert-status .offline {
+    color: var(--alert-orange);
+}
+
+.alert-status .unknown {
+    color: var(--signal-blue);
+}
+
+/* Hero Description */
+.hero-description {
+    max-width: 600px;
+    margin: 0 auto 40px;
+    line-height: 1.8;
+    color: var(--text-dim);
+    font-size: 16px;
+}
+
+/*Buttons */
+.hero-buttons {
+    display: flex;
+    gap: 20px;
+    justify-content: center;
+    flex-wrap: wrap;
+}
+
+.cta-button {
+    background: transparent;
+    border: 2px solid var(--terminal-green);
+    color: var(--terminal-green);
+    padding: 15px 40px;
+    font-family: 'Share Tech Mono', monospace;
+    font-size: 14px;
+    cursor: pointer;
+    transition: all 0.3s;
+}
+
+.cta-button:hover {
+    background: var(--terminal-green);
+    color: var(--void-black);
+    box-shadow: 0 0 20px var(--terminal-green);
+    transform: translateY(-2px);
+}
+
+.cta-button.danger {
+    border-color: var(--danger-red);
+    color: var(--danger-red);
+}
+
+.cta-button.danger:hover {
+    background: var(--danger-red);
+    color: var(--void-black);
+    box-shadow: 0 0 20px var(--danger-red);
+}
+
+/*INCIDENT REPORT*/
+
+.incident-section {
+    background: var(--void-black);
+    padding: 100px 20px;
+}
+
+.log-container {
+    max-width: 900px;
+    margin: 0 auto;
+    background: rgba(26, 26, 26, 0.8);
+    border: 2px solid var(--terminal-green);
+    padding: 40px;
+}
+
+.log-header {
+    border-bottom: 2px solid var(--terminal-green);
+    padding-bottom: 20px;
+    margin-bottom: 40px;
+    color: var(--terminal-green);
+    font-size: 13px;
+    line-height: 1.8;
+}
+
+.log-header span {
+    display: block;
+}
+
+.log-entry {
+    margin-bottom: 50px;
+    padding-left: 20px;
+    border-left: 3px solid var(--signal-blue);
+}
+
+.timestamp {
+    color: var(--signal-blue);
+    font-size: 12px;
+    text-transform: uppercase;
+    display: block;
+    margin-bottom: 15px;
+}
+
+.log-text {
+    color: var(--text-primary);
+    line-height: 1.8;
+    font-size: 15px;
+}
+
+.log-text p {
+    margin-bottom: 15px;
+}
+
+.critical-text {
+    color: var(--danger-red);
+    font-weight: bold;
+}
+
+.transmission-end {
+    text-align: center;
+    color: var(--danger-red);
+    border: 2px solid var(--danger-red);
+    padding: 20px;
+    margin: 40px 0 30px;
+    font-weight: bold;
+    animation: blink 2s infinite;
+}
+
+.glitch-trigger {
+    display: block;
+    margin: 0 auto;
+    background: transparent;
+    border: 2px solid var(--signal-blue);
+    color: var(--signal-blue);
+    padding: 12px 30px;
+    font-family: 'Share Tech Mono', monospace;
+    cursor: pointer;
+    transition: all 0.3s;
+}
+
+.glitch-trigger:hover {
+    background: var(--signal-blue);
+    color: var(--void-black);
+    box-shadow: 0 0 20px var(--signal-blue);
+}
+
+.glitching {
+    animation: text-glitch 0.1s infinite;
+}
+
+@keyframes text-glitch {
+    0% { transform: translate(0); }
+    20% { transform: translate(-2px, 2px); color: var(--danger-red); }
+    40% { transform: translate(2px, -2px); color: var(--signal-blue); }
+    60% { transform: translate(-2px, -2px); color: var(--terminal-green); }
+    80% { transform: translate(2px, 2px); }
+    100% { transform: translate(0); }
+}
+
+/*WEEK 4: SHIP SYSTEMS*/
+
+.systems-section {
+    background: var(--void-black);
+    padding: 100px 20px;
+}
+
+.section-header {
+    max-width: 1200px;
+    margin: 0 auto 60px;
+    text-align: center;
+}
+
+.section-title {
+    color: var(--terminal-green);
+    font-size: 24px;
+    margin-bottom: 10px;
+}
+
+.section-subtitle {
+    color: var(--text-dim);
+    font-size: 13px;
+}
+
+.systems-grid {
+    max-width: 1200px;
+    margin: 0 auto;
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+    gap: 30px;
+}
+
+/* System Card */
+.system-card {
+    background: rgba(26, 26, 26, 0.9);
+    border: 2px solid var(--terminal-green);
+    transition: all 0.3s;
+    position: relative;
+    overflow: hidden;
+}
+
+.system-card:hover {
+    transform: translateY(-8px);
+    box-shadow: 0 10px 40px rgba(0, 255, 65, 0.3);
+}
+
+/* Card Header */
+.card-header {
+    background: var(--deep-space);
+    border-bottom: 2px solid var(--terminal-green);
+    padding: 15px 20px;
+    color: var(--terminal-green);
+    font-size: 13px;
+    text-transform: uppercase;
+}
+
+/* Status Bar */
+.status-bar {
+    padding: 15px 20px;
+    background: rgba(0, 0, 0, 0.5);
+    border-bottom: 1px solid var(--hull-gray);
+    font-size: 12px;
+    color: var(--text-dim);
+}
+
+.status-percent {
+    color: var(--terminal-green);
+}
+
+.progress-bar {
+    width: 100%;
+    height: 4px;
+    background: var(--hull-gray);
+    margin-top: 8px;
+    position: relative;
+    overflow: hidden;
+}
+
+.progress-fill {
+    height: 100%;
+    background: var(--terminal-green);
+    width: 0%;
+    transition: width 1s ease;
+}
+
+.progress-fill.warning {
+    background: var(--alert-orange);
+}
+
+.progress-fill.critical {
+    background: var(--danger-red);
+    animation: pulse 1s infinite;
+}
+
+@keyframes pulse {
+    0%, 100% { opacity: 1; }
+    50% { opacity: 0.5; }
+}
+
+/* Card Content */
+.card-content {
+    padding: 20px;
+    color: var(--text-primary);
+    line-height: 1.8;
+    font-size: 14px;
+    min-height: 200px;
+}
+
+.card-content p {
+    margin-bottom: 15px;
+}
+
+.feature-list {
+    margin-top: 15px;
+    padding-left: 0;
+    list-style: none;
+}
+
+.feature-list li {
+    padding: 5px 0;
+    color: var(--text-dim);
+}
+
+.feature-list li::before {
+    content: '• ';
+    color: var(--signal-blue);
+    font-weight: bold;
+}
+
+/* Card Footer */
+.card-footer {
+    padding: 15px 20px;
+    background: var(--deep-space);
+    border-top: 2px solid var(--terminal-green);
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    font-size: 12px;
+}
+
+.system-status {
+    color: var(--terminal-green);
+}
+
+.system-status.warning {
+    color: var(--alert-orange);
+}
+
+.system-status.critical {
+    color: var(--danger-red);
+}
+
+.like-section {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+}
+
+.like-btn {
+    background: transparent;
+    border: 1px solid var(--terminal-green);
+    color: var(--terminal-green);
+    padding: 5px 12px;
+    cursor: pointer;
+    font-family: 'Share Tech Mono', monospace;
+    font-size: 11px;
+    transition: all 0.3s;
+}
+
+.like-btn:hover {
+    background: var(--terminal-green);
+    color: var(--void-black);
+    box-shadow: 0 0 15px var(--terminal-green);
+}
+
+.like-btn.liked {
+    background: var(--terminal-green);
+    color: var(--void-black);
+}
+
+.like-count {
+    color: var(--text-dim);
+}
+
+/* Card Glitch Effect */
+.liked-glitch {
+    animation: card-glitch 0.3s;
+}
+
+@keyframes card-glitch {
+    0%, 100% { transform: translateY(-8px); }
+    10% { transform: translate(-10px, -6px); }
+    20% { transform: translate(-8px, -10px); }
+    30% { transform: translate(-10px, -8px); }
+    40% { transform: translate(-8px, -6px); }
+    50% { transform: translate(-6px, -8px); }
+    60% { transform: translate(-8px, -10px); }
+    70% { transform: translate(-10px, -6px); }
+    80% { transform: translate(-6px, -8px); }
+    90% { transform: translate(-8px, -8px); }
+}
+
+/*FOOTER*/
+
+footer {
+    background: var(--deep-space);
+    border-top: 3px solid var(--terminal-green);
+    padding: 60px 20px 30px;
+    position: relative;
+}
+
+/* Animated Top Border */
+footer::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 3px;
+    background: linear-gradient(
+        90deg,
+        var(--terminal-green) 0%,
+        var(--signal-blue) 50%,
+        var(--danger-red) 100%
+    );
+    animation: border-scan 3s linear infinite;
+}
+
+@keyframes border-scan {
+    0% { transform: translateX(-100%); }
+    100% { transform: translateX(100%); }
+}
+
+.footer-container {
+    max-width: 1200px;
+    margin: 0 auto;
+}
+
+.footer-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 60px;
+    margin-bottom: 40px;
+}
+
+.footer-section h3 {
+    color: var(--terminal-green);
+    font-size: 14px;
+    text-transform: uppercase;
+    margin-bottom: 20px;
+    padding-bottom: 10px;
+    border-bottom: 1px solid var(--hull-gray);
+}
+
+.footer-section p,
+.footer-section a {
+    color: var(--text-dim);
+    font-size: 13px;
+    line-height: 1.8;
+    text-decoration: none;
+    display: block;
+    transition: all 0.3s;
+    margin-bottom: 8px;
+}
+
+.footer-section a:hover {
+    color: var(--terminal-green);
+    text-shadow: 0 0 8px var(--terminal-green);
+    padding-left: 10px;
+}
+
+.ship-info {
+    line-height: 2;
+}
+
+.ship-info .status {
+    color: var(--danger-red);
+    font-weight: bold;
+}
+
+.external-link {
+    padding: 8px 16px;
+    border: 1px solid var(--terminal-green);
+    margin: 5px 0;
+    transition: all 0.3s;
+}
+
+.external-link:hover {
+    background: rgba(0, 255, 65, 0.1);
+    box-shadow: 0 0 15px rgba(0, 255, 65, 0.3);
+}
+
+.transmission-end-footer {
+    text-align: center;
+    margin: 40px 0 30px;
+    padding: 20px;
+    border: 2px solid var(--danger-red);
+    color: var(--danger-red);
+    background: rgba(255, 0, 64, 0.05);
+    font-weight: bold;
+    animation: blink 2s infinite;
+}
+
+.footer-bottom {
+    border-top: 1px solid var(--hull-gray);
+    padding-top: 30px;
+    text-align: center;
+    color: var(--text-dim);
+    font-size: 12px;
+}
+
+.footer-bottom p {
+    margin-bottom: 5px;
+}
+
+/*RESPONSIVE DESIGN*/
+
+/* Tablet & Mobile */
+@media (max-width: 768px) {
+    /* Navigation */
+    .nav-container {
+        flex-direction: column;
+        align-items: flex-start;
+    }
+    
+    .nav-header {
+        width: 100%;
+        flex-direction: column;
+        gap: 10px;
+        align-items: flex-start;
+    }
+    
+    .nav-menu {
+        flex-direction: column;
+        gap: 15px;
+        width: 100%;
+    }
+    
+    .nav-menu a {
+        font-size: 16px;
+    }
+    
+    /* Hero */
+    .hero-title {
+        font-size: 36px;
+        letter-spacing: 4px;
+    }
+    
+    .emergency-alert {
+        padding: 20px;
+    }
+    
+    .alert-status {
+        grid-template-columns: 1fr;
+        gap: 10px;
+    }
+    
+    .hero-description {
+        font-size: 14px;
+    }
+    
+    .cta-button {
+        padding: 12px 30px;
+        font-size: 12px;
+    }
+    
+    /* Incident Report */
+    .log-container {
+        padding: 25px;
+    }
+    
+    .log-text {
+        font-size: 14px;
+    }
+    
+    /* Systems */
+    .systems-grid {
+        grid-template-columns: 1fr;
+    }
+    
+    .card-content {
+        min-height: auto;
+    }
+    
+    /* Footer */
+    .footer-grid {
+        grid-template-columns: 1fr;
+        gap: 40px;
+    }
+}
