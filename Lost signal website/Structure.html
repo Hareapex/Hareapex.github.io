@@ -3,20 +3,63 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
+    <title>Lost Signal - Meili MKII</title>
+    
+    <!-- LEGAL COMPLIANCE DOCUMENTATION
+    ═════════════════════════════════════════════
+    
+    FONTS:
+    - Share Tech Mono: Google Fonts (Open Font License)
+      Source: https://fonts.google.com/specimen/Share+Tech+Mono
+      License: https://scripts.sil.org/OFL
+    - Orbitron: Google Fonts (Open Font License)
+      Source: https://fonts.google.com/specimen/Orbitron
+      License: https://scripts.sil.org/OFL
+    
+    IMAGES:
+    - (Add your image sources here when you add images)
+    - Example: hero-bg.jpg from Unsplash (CC0)
+    
+    CODE:
+    - HTML/CSS/JavaScript: Original work
+    - Design concept: Original for Lost Signal
+    - Animations: Original implementations
+    
+    COPYRIGHT:
+    © 2025 Lost Signal. All rights reserved.
+    Lost Signal - Original game concept
+    Created for Web Development 1 - Project 2
+    
+    ═════════════════════════════════════════════
+    -->
+    
+    <!-- Google Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Orbitron:wght@400;700&family=Share+Tech+Mono&display=swap" rel="stylesheet">
+    
+    <link rel="stylesheet" href="style.css">
 </head>
 <body>
-<nav class="terminal-nav">
+
+    <!-- NAVIGATION PLANNING WEEK 1
+    Purpose: Terminal-style navigation for Meili MKII's computer system
+    Menu choices: HOME, INCIDENT, SHIP_SPECS, CREW, DOWNLOAD
+    Design: Black background, neon green accent, monospace font
+    Hover: Text glows, shifts, cursor symbol appears
+    Responsive: Horizontal desktop → vertical mobile
+    Feel: Like navigating a spaceship computer system
+    -->
+    <nav class="terminal-nav">
         <div class="nav-container">
             <div class="nav-header">
-
-                /*Changed name from [ÍSSGARD] to [Meili MKII]*/
+                <!-- Changed name from [ÍSSGARD] to [Meili MKII] -->
                 <span class="ship-name">[Meili MKII]</span>
-                /*warning sign for the ship status*/
+                <!-- Warning sign for the ship status -->
                 <span class="status-indicator">SYSTEMS COMPROMISED</span>
             </div>
             <ul class="nav-menu">
-                /*nav menu stuff mainly just place holders*/
+                <!-- Nav menu stuff mainly just placeholders -->
                 <li><a href="#home">> HOME</a></li>
                 <li><a href="#incident">> INCIDENT</a></li>
                 <li><a href="#ship">> SHIP_SPECS</a></li>
@@ -26,19 +69,24 @@
         </div>
     </nav>
 
-
-
-
-   <header class="hero">
+    <!-- HEADER PLANNING WEEK 2
+    Purpose: Dramatic hero showing the crisis situation
+    Content: Title, emergency alert box, description, CTA
+    Design: Black background, neon glows, scanlines, flicker
+    Feel: Isolation, danger, urgency - something is wrong
+    Effects: Flicker on title, blink on alert, hover glow
+    -->
+    <header class="hero">
         <div class="hero-content">
             
             <h1 class="hero-title">LOST SIGNAL</h1>
             
             <div class="emergency-alert">
                 <div class="alert-header">
+                    [ ! ] EMERGENCY BROADCAST [ ! ]
                 </div>
                 <div class="alert-status">
-                    /*using span so i can color the text without affecting the layout*/
+                    <!-- Using span so I can color the text without affecting the layout -->
                     <div>SHIP: Meili MKII</div>
                     <div>STATUS: <span class="critical">CRITICAL</span></div>
                     <div>COMMS: <span class="offline">OFFLINE</span></div>
@@ -51,9 +99,8 @@
                 As mechanic Ragnarr, you must restore communications and uncover what 
                 lurks in the ship's darkened corridors.
             </p>
-        </div>
-
-        <div class="hero-buttons">
+            
+            <div class="hero-buttons">
                 <button class="cta-button">[▶ PLAY PROTOTYPE]</button>
                 <button class="cta-button danger">[📡 TRANSMISSIONS]</button>
             </div>
@@ -61,12 +108,14 @@
         </div>
     </header>
 
-
-
-
-
-
-<section class="incident-section">
+    <!-- MAIN CONTENT PLANNING WEEK 3
+    Purpose: Tell Lost Signal's story through ship log format
+    Content: 5 parts - Awakening → Briefing → Mission → Medical → Signal
+    Design: Terminal log with timestamps, borders, special formatting
+    JavaScript: Glitch effect on "Replay Transmission" button
+    Progression: Normal → Concern → Dread → Cliffhanger
+    -->
+    <section class="incident-section">
         <div class="log-container">
             
             <div class="log-header">
@@ -129,14 +178,20 @@
                 [ TRANSMISSION ENDED ]
             </div>
 
+            <!-- Glitch effect for the replay button -->
+            <button id="glitchBtn" class="glitch-trigger">[REPLAY TRANSMISSION]</button>
 
+        </div>
+    </section>
 
-
-
-
-
-
-            <section class="systems-section">
+    <!-- PORTFOLIO/FEATURES PLANNING WEEK 4
+    Purpose: Show Lost Signal's features through system panels
+    Content: 4 cards - Exploration, Engineering, Threat, Narrative
+    Design: Terminal panels with status bars, color-coded
+    JavaScript: Like system with counter + status updates
+    Layout: Responsive grid, hover effects
+    -->
+    <section class="systems-section">
         <div class="section-header">
             <div class="section-title">> SHIP_SYSTEMS_OVERVIEW</div>
             <div class="section-subtitle">> CORE_MECHANICS.exe</div>
@@ -155,7 +210,7 @@
                     </div>
                 </div>
                 <div class="card-content">
-                    <p>Navigate the claustrophobic corridors of Íssgard. Every shadow hides secrets. Every sound matters.</p>
+                    <p>Navigate the claustrophobic corridors of Meili MKII. Every shadow hides secrets. Every sound matters.</p>
                     <ul class="feature-list">
                         <li>First-person perspective</li>
                         <li>Interactive objects</li>
@@ -207,7 +262,7 @@
                     </div>
                 </div>
                 <div class="card-content">
-                    <p>Something is aboard Íssgard. Limited resources. No backup. Trust your instincts and survive the nightmare.</p>
+                    <p>Something is aboard Meili MKII. Limited resources. No backup. Trust your instincts and survive the nightmare.</p>
                     <ul class="feature-list">
                         <li>Sound-based horror</li>
                         <li>Limited visibility</li>
@@ -233,7 +288,7 @@
                     </div>
                 </div>
                 <div class="card-content">
-                    <p>Uncover what happened to Íssgard's crew. Find audio logs. Piece together the truth behind the disaster.</p>
+                    <p>Uncover what happened to Meili MKII's crew. Find audio logs. Piece together the truth behind the disaster.</p>
                     <ul class="feature-list">
                         <li>Ragnarr (You - Engineer)</li>
                         <li>Eir (Medical Officer)</li>
@@ -252,28 +307,61 @@
         </div>
     </section>
 
-
-
-
-
-
-
-
-
-
-
-            <!-- glitch effect for the replay button -->
-            <button id="glitchBtn" class="glitch-trigger">[REPLAY TRANSMISSION]</button>
-
+    <!-- FOOTER PLANNING WEEK 5
+    Purpose: Professional ending + final polish
+    Content: Ship info, navigation, external links
+    Design: 3-column grid, animated border, hover effects
+    Completion: Validation, testing, documentation
+    -->
+    <footer>
+        <div class="footer-container">
+            
+            <div class="footer-grid">
+                
+                <!-- Column 1: Ship Registry -->
+                <div class="footer-section">
+                    <h3>> MEILI_MKII_REGISTRY</h3>
+                    <div class="ship-info">
+                        <p>CLASS: Deep-Space Cargo</p>
+                        <p>OPERATOR: Ragnarr [Mechanic]</p>
+                        <p>STATUS: <span class="status">Compromised</span></p>
+                        <p>MISSION: Survival</p>
+                    </div>
+                </div>
+                
+                <!-- Column 2: Quick Navigation -->
+                <div class="footer-section">
+                    <h3>> QUICK_ACCESS</h3>
+                    <a href="#home">> Home</a>
+                    <a href="#incident">> Incident Report</a>
+                    <a href="#ship">> Ship Systems</a>
+                    <a href="#crew">> Crew</a>
+                    <a href="#download">> Download</a>
+                </div>
+                
+                <!-- Column 3: External Links -->
+                <div class="footer-section">
+                    <h3>> EXTERNAL_COMMS</h3>
+                    <a href="#" class="external-link">[ITCH.IO] Play Game</a>
+                    <a href="#" class="external-link">[GITHUB] Source Code</a>
+                    <a href="#" class="external-link">[TWITTER] Dev Updates</a>
+                    <p style="margin-top: 20px; color: var(--text-dim);">CONTACT: your@email.com</p>
+                </div>
+                
+            </div>
+            
+            <div class="transmission-end-footer">
+                [ TRANSMISSION ENDED ]
+            </div>
+            
+            <div class="footer-bottom">
+                <p>&copy; 2025 Your Name. All rights reserved.</p>
+                <p>Lost Signal - Original game concept</p>
+            </div>
+            
         </div>
-    </section>
+    </footer>
 
-
-
-
-    
-
-</header>
     <script src="script.js"></script>
 </body>
 </html>
