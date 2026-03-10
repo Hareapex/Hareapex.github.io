@@ -8,7 +8,7 @@ console.log('Meili MKII terminal initialized');
 document.addEventListener('DOMContentLoaded', function() {
     
     // ========================================
-    // WEEK 3: glitch text effect
+    //glitch text effect
     // ========================================
     
     const glitchBtn = document.getElementById('glitchBtn');
@@ -51,7 +51,7 @@ document.addEventListener('DOMContentLoaded', function() {
     }
     
     // ========================================
-    // WEEK 4: like system for the cards
+    //like system for the cards
     // ========================================
     
     const cards = document.querySelectorAll('.system-card');
@@ -114,7 +114,7 @@ document.addEventListener('DOMContentLoaded', function() {
     });
     
     // ========================================
-    // WEEK 4: progress bars that animate on scroll
+    //progress bars that animate on scroll
     // ========================================
     
     const progressBars = document.querySelectorAll('.progress-fill');
