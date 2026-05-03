@@ -238,3 +238,28 @@ main {
     color: var(--text-secondary);
     letter-spacing: 1px;
 }
+
+
+/* ============================================
+   MEDIA QUERY - MOBILE
+   a media query changes the layout based on screen size.
+   everything inside this block only applies when the
+   screen is 768px wide or smaller (phones and small tablets)
+   ============================================ */
+
+@media (max-width: 768px) {
+
+    .hero-title {
+        font-size: 28px;
+    }
+
+    /* on mobile the grid switches from 4 columns to 1 column */
+    .games-grid {
+        grid-template-columns: 1fr;
+    }
+
+    .nav-links {
+        gap: 16px;
+    }
+
+}
