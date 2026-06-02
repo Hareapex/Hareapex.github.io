@@ -8,6 +8,9 @@
 </head>
 <body>
 
+
+
+
     <!-- ========================================
          HEADER
     ======================================== -->
@@ -23,40 +26,79 @@
         </nav>
     </header>
 
+
+
+
     <!-- ========================================
          MAIN CONTENT
     ======================================== -->
     <main>
 
+
+
+
         <!-- SECTION 1: Copyright -->
         <section id="copyright">
             <h2>1. Copyright & Intellectual Property</h2>
             <p>
-                Placeholder text — content to be written.
+                Copyright is a legal protection that automatically applies to any original creative work the moment it is created. This includes text, images, music, videos and code. On the web this means that almost everything you find online is protected by default — you cannot simply copy and use it on your own website without permission from the original creator. Violating copyright can result in legal action, fines or having your content taken down.
+            </p>
+            <p>
+                When building a website you need to be careful about where your assets come from. Using a random image from Google Images for example is almost always a copyright violation. Instead you should use content that is either your own, licensed for reuse, or in the public domain. Creative Commons licenses allow creators to share their work under specific conditions — some allow free use with attribution, others restrict commercial use or modifications. Similarly, open source code licenses like MIT or Apache allow developers to freely use and modify code as long as the license terms are followed.
+            </p>
+            <p>
+                A practical rule when publishing anything on the web is to always verify the license of any asset you use. If you cannot find a clear license, assume it is protected. When in doubt, create your own assets or use dedicated royalty-free platforms that explicitly grant permission for web use.
             </p>
         </section>
+
+
+
 
         <!-- SECTION 2: GDPR -->
         <section id="gdpr">
             <h2>2. GDPR & Privacy</h2>
             <p>
-                Placeholder text — content to be written.
+                The General Data Protection Regulation, commonly known as GDPR, is a European Union law that came into effect in 2018. It governs how personal data about EU citizens must be collected, stored and handled. Personal data refers to any information that can identify a person, such as names, email addresses, IP addresses or location data. GDPR applies to any website that collects this kind of data from EU users, regardless of where the website itself is hosted.
+            </p>
+            <p>
+                For a website owner, GDPR creates several concrete obligations. Users must be clearly informed about what data is being collected and why, and in most cases they must actively consent to it before collection begins. This is why most websites display a cookie consent banner when you first visit them. Users also have the right to request access to their data, have it corrected, or have it deleted entirely — often referred to as the right to be forgotten.
+            </p>
+            <p>
+                Failing to comply with GDPR can result in significant fines split across two tiers. Less severe violations such as failing to maintain proper records can result in fines of up to €10 million or 2% of annual global turnover. More severe violations such as breaching the core principles of data processing or ignoring user rights can result in fines of up to €20 million or 4% of annual global turnover, whichever is higher. For a web developer this means that even simple features like contact forms, newsletter signups or analytics tools need to be implemented with data privacy in mind. Using tools like Google Analytics for example requires informing users and obtaining consent, since it collects identifiable data about visitor behaviour.
             </p>
         </section>
+
+
+
 
         <!-- SECTION 3: Security Solutions -->
         <section id="security">
             <h2>3. Security Solutions</h2>
             <p>
-                Placeholder text — content to be written.
+                Security is a fundamental responsibility for anyone publishing a website. One of the most basic and important security measures is implementing HTTPS, which encrypts the connection between the user's browser and the web server. This prevents attackers from intercepting sensitive data such as login credentials or payment information. Modern browsers actively warn users when a site uses plain HTTP instead of HTTPS, and search engines like Google also rank HTTPS sites higher. Obtaining an SSL/TLS certificate, which enables HTTPS, is straightforward and often free through services like Let's Encrypt.
+            </p>
+            <p>
+                Two of the most common attack types targeting websites are SQL injection and Cross-Site Scripting, known as XSS. SQL injection occurs when an attacker inserts malicious code into an input field, such as a login form, in an attempt to manipulate the database behind the site. This can be prevented by validating and sanitising all user input and using parameterised queries when interacting with databases. XSS attacks involve injecting malicious scripts into web pages that are then executed in other users' browsers. Protecting against XSS requires properly escaping any user-generated content before displaying it on the page.
+            </p>
+            <p>
+                Password security is another critical area. Websites should never store passwords as plain text. Instead, passwords should be hashed using a strong algorithm such as bcrypt before being stored in the database. Hashing is a one-way process meaning that even if the database is compromised, the actual passwords cannot be easily recovered. Combining hashing with a technique called salting, which adds a unique random value to each password before hashing, further strengthens protection against common attacks like rainbow table lookups.
             </p>
         </section>
+
+
+
 
         <!-- SECTION 4: Web Ethics -->
         <section id="ethics">
             <h2>4. Web Ethics</h2>
             <p>
-                Placeholder text — content to be written.
+                Web ethics refers to the moral responsibilities that come with building and operating websites. One significant ethical concern is the use of dark patterns — design choices that are deliberately intended to manipulate or mislead users into doing something they did not intend to do. Common examples include making it difficult to cancel a subscription, hiding opt-out options, or using confusing language on consent buttons to trick users into accepting data collection. While these practices may not always be illegal, they are widely considered unethical because they exploit users rather than serve them.
+            </p>
+            <p>
+                Accessibility is another core ethical obligation in web development. A website that is not accessible excludes people with disabilities such as visual impairments, motor difficulties or cognitive challenges. This includes things like ensuring sufficient color contrast, providing text alternatives for images, and making sure the site can be navigated using only a keyboard. Building with accessibility in mind is not just good practice — in many countries there are legal requirements for public websites to meet accessibility standards such as WCAG. Treating accessibility as optional effectively signals that certain users do not matter.
+            </p>
+            <p>
+                Transparency around data collection is also an ethical issue that goes beyond just legal compliance. Even when a website technically follows GDPR, there is an ethical dimension to how clearly and honestly users are informed about what happens to their data. Burying important information in long terms of service documents that nobody reads, or using vague language to obscure data sharing with third parties, may be legally permissible but is ethically questionable. A responsible web developer should aim to make data practices as clear and understandable as possible for the average user.
             </p>
         </section>
 
@@ -64,7 +106,13 @@
         <section id="thirdparty">
             <h2>5. Third-party Code & Web Hosting</h2>
             <p>
-                Placeholder text — content to be written.
+                Modern web development heavily relies on third-party code such as npm packages, CDN-hosted libraries and plugins. While these tools save significant development time, they also introduce security risks that are easy to overlook. When you add an external dependency to your project you are trusting that its code is safe and maintained. A malicious or compromised package can execute arbitrary code in your application, steal user data or create vulnerabilities that attackers can exploit. This is not theoretical — there have been several high profile cases where widely used npm packages were compromised and affected thousands of websites simultaneously.
+            </p>
+            <p>
+                CDN-hosted libraries present a similar risk. When you load a JavaScript library directly from an external URL, you are dependent on that external server being secure and trustworthy. If the CDN is compromised, the malicious version of the library gets served to every visitor of your site automatically. A way to mitigate this is to use Subresource Integrity, known as SRI, which allows browsers to verify that a file fetched from a CDN matches an expected cryptographic hash. If the file has been tampered with, the browser will refuse to load it.
+            </p>
+            <p>
+                External web hosting introduces its own category of risk. When you host your website on a third-party server you are trusting that provider to keep their infrastructure secure, maintain uptime and handle your data responsibly. A poorly secured hosting provider can expose your site to attacks, data breaches or unexpected downtime. It is important to choose reputable hosting providers, keep all server software updated, use strong and unique passwords for hosting control panels, and where possible enable two-factor authentication. Regularly backing up your website is also essential, as it ensures you can recover quickly if something goes wrong.
             </p>
         </section>
 
@@ -77,7 +125,15 @@
         <p>WEUWEB01 — Module 7 — Law & Web Ethics</p>
     </footer>
 
-
+    <!-- SLUTREFLEKTION
+    Implementerad funktion: Module 7 - Law & Web Ethics
+    Tekniska utmaningar: since the website is mostly just text, there wasnt anything technically challanging to implement.
+    Kod-kvalitet: the code is clean and well stuctured.
+    Testning: Validated HTML and CSS
+    Användarupplevelse: Clean
+    Framtida förbättringar: make the website a little bit more visually engaging.
+    Lärdommar: I learned a more in depth understanding of the legal and ethical side of web development
+    -->
 
 </body>
 </html>
